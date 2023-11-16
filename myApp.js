@@ -1,13 +1,13 @@
 const express = require("express");
 const helmet = require("helmet");
-const helmetVersion = require("helmet/package.json").version;
+const package = require("./package.json");
 
 const app = express();
 
 app.use(helmet());
 
 app.get("/_api/package.json", (req, res) => {
-  res.send(helmetVersion);
+  res.send(package);
 });
 
 app.listen(3000, () => {
