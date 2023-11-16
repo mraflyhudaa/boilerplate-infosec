@@ -7,6 +7,7 @@ const app = express();
 app.use(helmet());
 
 app.get("/_api/package.json", (req, res) => {
+  console.log(package);
   res.send(package);
 });
 
